@@ -1,0 +1,70 @@
+﻿@page "/"
+@inherits TicketListBase
+
+<p>Total Number Of Tickets:  @Tickets.Count.ToString()</p>
+<h3>Service Board List</h3>
+
+
+    <div class="container">
+        <table class="table">
+            <thead>
+            <th>Ticket#</th>
+            <th>Priority</th>
+            <th>Age</th>
+            <th>Status</th>
+            <th>Company</th>
+            <th>Summary Description</th>
+            <th>Consultant</th>
+            <th>Total Hours</th>
+            <th>SLA Status</th>
+            <th>Contact</th>
+            <th>Last Update</th>
+            <th>Site</th>
+            <th>Source</th>
+            <th>Customer Updated</th>
+            </thead>
+            <tbody>
+                @foreach (var ticket in Tickets)
+                {
+                    <tr>
+                        <td>@ticket.TicketId </td>
+                        <td>@ticket.Priority</td>
+                        <td>@ticket.Age</td>
+                        <td>@ticket.Status</td>
+                        <td>@ticket.Company.CompanyName</td>
+                        <td>@ticket.SummaryDescription</td>
+                        <td>@ticket.Consultant.EmployeeName</td>
+                        <td>@ticket.HoursWorked</td>
+                        <td>@ticket.ServiceLevel</td>
+                        <td>@ticket.Company.ContactPerson</td>
+                        <td>@ticket.LastDate</td>
+                        <td>@ticket.Site</td>
+                        <td>@ticket.Source</td>
+                        <td>@ticket.CustomerUpdated</td>
+
+                    </tr>
+                    @*< tr >
+                            < td > @ticket.TicketId </ td >
+                            < td > @ticket.Priority </ td >
+                            < td > @ticket.Age </ td >
+                            < td > @ticket.Status </ td >
+                            < td > @ticket.Company </ td >
+                            < td > @ticket.SummaryDescription </ td >
+                            < td > @ticket.Consultant </ td >
+                            < td > @ticket.HoursWorked </ td >
+                            < td > @ticket.ServiceLevel </ td >
+                            < td > @ticket.ContactPerson </ td >
+                            < td > @ticket.Source </ td >
+                            < td > @ticket.LastDate </ td >
+                            < td > @ticket.CustomerUpdated </ td >
+                            < td ></ td >
+                        </ tr >*@
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
